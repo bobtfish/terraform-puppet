@@ -14,7 +14,7 @@ class role::puppetmaster {
   apt_key {
     'puppetlabs':
       ensure => 'present',
-      id     => '1054B7A24BD6EC30';
+      id     => '47B320EB4C7C375AA9DAE1A01054B7A24BD6EC30';
     'docker':
       ensure => 'present',
       id => '36A1D7869245C8950F966E92D8576A8BA88D21E9';
