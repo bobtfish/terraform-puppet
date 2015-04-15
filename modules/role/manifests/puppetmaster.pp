@@ -1,4 +1,8 @@
 class role::puppetmaster {
+  host { 'puppet':
+    ensure => 'present',
+    ip     => $::ipaddress_eth0,
+  }
   class { 'apt':
     purge_sources_list   => true,
     purge_sources_list_d => true,
@@ -23,6 +27,18 @@ class role::puppetmaster {
       location => 'https://get.docker.io/ubuntu',
       repos    => 'main',
       release  => 'trusty';
+    'ubuntu':
+      location => 'http://eu-central-1a.clouds.archive.ubuntu.com/ubuntu/',
+      release  => 'trusty',
+      repos    => 'main universe';
+    'ubuntu-updates':
+      location => 'http://eu-central-1a.clouds.archive.ubuntu.com/ubuntu/',
+      release  => 'trusty-updates',
+      repos    => 'main universe';
+    'ubuntu-security':
+      location => 'http://security.ubuntu.com/ubuntu',
+      release  => 'trusty',
+      repos    => 'main universe';
   }
 }
 
