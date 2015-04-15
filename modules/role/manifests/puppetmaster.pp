@@ -30,11 +30,11 @@ class role::puppetmaster {
       release     => 'docker',
       include_src => false;
     'ubuntu':
-      location => 'http://eu-central-1a.clouds.archive.ubuntu.com/ubuntu/',
+      location => "http://${::ec2_placement_availability_zone}.clouds.archive.ubuntu.com/ubuntu/",
       release  => 'trusty',
       repos    => 'main universe';
     'ubuntu-updates':
-      location => 'http://eu-central-1a.clouds.archive.ubuntu.com/ubuntu/',
+      location => "http://${::ec2_placement_availability_zone}.clouds.archive.ubuntu.com/ubuntu/",
       release  => 'trusty-updates',
       repos    => 'main universe';
     'ubuntu-security':
