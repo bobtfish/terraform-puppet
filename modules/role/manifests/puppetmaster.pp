@@ -22,11 +22,12 @@ class role::puppetmaster {
   apt::source {
     'puppetlabs':
       location   => 'http://apt.puppetlabs.com',
-      repos      => 'main';
+      repos      => 'main',
+      release    => 'trusty';
     'docker':
       location => 'https://get.docker.io/ubuntu',
       repos    => 'main',
-      release  => 'trusty';
+      release  => 'docker';
     'ubuntu':
       location => 'http://eu-central-1a.clouds.archive.ubuntu.com/ubuntu/',
       release  => 'trusty',
