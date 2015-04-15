@@ -42,5 +42,11 @@ class role::puppetmaster {
       release  => 'trusty',
       repos    => 'main universe';
   }
+  package { ['nmap', 'traceroute', 'vim', 'lxc-docker', 'git']: ensure => latest }
+  package { 'puppetmaster-passenger': ensure => latest } ~>
+  service { 'apache2':
+    enable => true,
+    ensure => running.
+  }
 }
 
