@@ -6,7 +6,7 @@ class role::puppetmaster inherits role::base {
   package { 'puppetmaster-passenger': ensure => latest } ~>
   service { 'apache2':
     enable => true,
-    ensure => running.
+    ensure => running,
   }
 }
 
