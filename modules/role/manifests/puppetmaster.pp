@@ -25,9 +25,10 @@ class role::puppetmaster {
       repos      => 'main',
       release    => 'trusty';
     'docker':
-      location => 'https://get.docker.io/ubuntu',
-      repos    => 'main',
-      release  => 'docker';
+      location    => 'https://get.docker.io/ubuntu',
+      repos       => 'main',
+      release     => 'docker',
+      include_src => false;
     'ubuntu':
       location => 'http://eu-central-1a.clouds.archive.ubuntu.com/ubuntu/',
       release  => 'trusty',
