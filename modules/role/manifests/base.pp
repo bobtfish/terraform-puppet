@@ -1,6 +1,6 @@
 class role::base {
   include profile_apt
   include ntp
-  include doge
+  include profile_doge
 }
 
